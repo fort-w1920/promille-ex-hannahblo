@@ -1,0 +1,23 @@
+## Stößchen!
+
+
+Die Seite [`promille-rechner.org`](https://web.archive.org/web/20150123143123/http://promille-rechner.org/erlaeuterung-der-promille-berechnung/)\footnote{Obacht, Link geht zum Internet-Archiv "Wayback Machine", das kann bisschen dauern...} bietet eine schöne Erklärung wie man nach dem sog. *Watson-Algorithmus* Blutalkoholkonzentrationen grob abschätzen kann. Benutzen Sie die dort beschriebene Methode um eine Funktion
+```{r, eval=FALSE}
+tell_me_how_drunk <- function(age, sex = c("male", "female"), height, weight, drinking_time, drinks) {
+  # ... your turn ...
+}
+```
+zu schreiben, die für gegebene Eigenschaften einer Person, den von ihr konsumierten Getränken (Art & Anzahl) `drinks`  und der Zeitspanne (Anfang/Ende) `drinking_time` in der getrunken wurde die Blutalkoholkonzentration (in Promille) zum Ende der `drinking_time` berechnet.
+
+Spezifikation:
+
+- Ihre Funktion muß die Getränkearten "massn", "hoibe", "wein" und "schnaps" kennen. Für Bier nehmen Sie bitte oktoberfestmäßige 6% an, für Wein 11% und 0.2l pro Portion und für Schnaps 40% und 4cl pro Portion. 
+- `drinks` kann als Liste (zB `list("massn" = 2, "schnaps" = 3)`) oder als Vektor übergeben werden (zB `c("wein" = 4, "hoibe" = 1)`). Ihre Funktion sollte beides akzeptieren.
+- `height` wird in cm angeben, `weight` in kg.
+- `drinking_time` bekommt einen Vektor von `POSIXct`-Zeitvariablen.
+
+Lösen Sie die Aufgabe im Top-Down-Stil den Sie in der Vorlesung kennengelernt haben.  
+
+Überprüfen Sie Ihre Funktion (mindestens) mit den Tests in `topdown-promille-tests.R`.
+
+Die Aufrufe in `topdown-promille-errors.R`  sollten jeweils einigermassen aussagekräftige Fehlermeldungen produzieren. Ihre Funktionen sollten also gutes *input checking* machen, benutzen Sie dafür bitte die `assert_<BLA>()`-Funktionen aus dem Paket `checkmate`. 
