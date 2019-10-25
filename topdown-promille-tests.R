@@ -12,7 +12,7 @@ test_that("basic implementation is correct", {
       drinking_time = as.POSIXct(c("2016-10-03 17:15:00", "2016-10-03 22:55:00")),
       drinks = c("massn" = 3, "schnaps" = 4)
     ),
-    3.07, tolerance = 0.01)
+    2.359, tolerance = 0.01)
   expect_equivalent(
     tell_me_how_drunk(
       age = 24,
@@ -32,7 +32,7 @@ test_that("basic implementation is correct", {
       drinking_time = as.POSIXct(c("2016-10-03 08:10:00", "2016-10-03 08:15:00")),
       drinks = c("schnaps" = 3)
     ),
-    0.85, tolerance = 0.01)
+    0.687, tolerance = 0.01)
   expect_equivalent(
     tell_me_how_drunk(
       age = 38,
@@ -53,7 +53,7 @@ test_that("interface is implemented flexibly", {
       sex = "male",
       height = 190,
       weight = 134,
-      drinking_time = as.POSIXct(c("2016-10-03 18:00:00", "2016-10-03 22:00:00")),
+        drinking_time = as.POSIXct(c("2016-10-03 18:00:00", "2016-10-03 22:00:00")),
       drinks = c("hoibe" = 1)
     ),
     tell_me_how_drunk(
